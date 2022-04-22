@@ -17,6 +17,7 @@ class CustomAuthController extends Controller
     public function customLogin(Request $request)
     {
         $request->validate([
+            
             'email' => 'required',
             'password' => 'required',
         ]);
@@ -41,6 +42,9 @@ class CustomAuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
+            'FirstName' => 'required',
+            'LastName' => 'required',
+            'Phone' => 'required',
         ]);
 
         $data = $request->all();
@@ -54,6 +58,9 @@ class CustomAuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'FirstName' => $data['FirstName'],
+            'LastName' => $data['LastName'],
+            'Phone' => $data['Phone'],
             'password' => Hash::make($data['password'])
         ]);
     }

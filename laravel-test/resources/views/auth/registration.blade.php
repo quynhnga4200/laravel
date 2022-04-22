@@ -30,6 +30,31 @@ name="password" required>
 <span class="text-danger">{{ $errors->first('password') }}</span>
 @endif
 </div>
+
+<div class="form-group mb-3">
+<input type="text" placeholder="FirstName" id="FirstName" class="form-control"
+name="FirstName" required>
+@if ($errors->has('FirstName'))
+<span class="text-danger">{{ $errors->first('FirstName') }}</span>
+@endif
+</div>
+
+<div class="form-group mb-3">
+<input type="text" placeholder="LastName" id="LastName" class="form-control"
+name="LastName" required>
+@if ($errors->has('LastName'))
+<span class="text-danger">{{ $errors->first('LastName') }}</span>
+@endif
+</div>
+
+<div class="form-group mb-3">
+<input type="text" placeholder="Phone" id="Phone" class="form-control"
+name="Phone" required>
+@if ($errors->has('Phone'))
+<span class="text-danger">{{ $errors->first('Phone') }}</span>
+@endif
+</div>
+
 <div class="form-group mb-3">
 <div class="checkbox">
 <label><input type="checkbox" name="remember"> Remember Me</label>
